@@ -1,1 +1,1 @@
-my readme file
+‘This repository contains solutions to shell tasks’
