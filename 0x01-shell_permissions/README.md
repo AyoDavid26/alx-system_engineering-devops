@@ -1,0 +1,1 @@
+sell permissin readme
