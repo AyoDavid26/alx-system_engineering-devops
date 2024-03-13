@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-#Regular Expressions task
+# Regular Expressions task
 
-puts ARGV[0].scan(/\[from: (.*?)\] \[to: (.*?)\] \[flags: (.*?)\]/).join(",")
+puts ARGV[0].scan(/\[from:(.*?)\] \[to:(.*?)\] \[flags:(.*?)\]/).join(",")
