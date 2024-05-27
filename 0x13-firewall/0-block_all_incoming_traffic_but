@@ -1,0 +1,9 @@
+# install the ufw firewall and setup few rules on web-01
+
+sudo apt install -y ufw
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo afw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+echo "y" | sudo ufw enable
