@@ -1,4 +1,3 @@
-# install the ufw firewall and setup few rules on web-01
 echo -e "Updating\n"
 
 sudo apt-get update
@@ -11,6 +10,9 @@ echo -e "configuring UEW...\n"
 
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
+
+ufw allow ssh
+
 sudo afw allow 22
 sudo ufw allow 80
 sudo ufw allow 443
