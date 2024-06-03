@@ -25,9 +25,11 @@ def export_to_csv(employee_id, employee_name, todos):
     filename = f"{employee_id}.csv"
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
+                         "TASK_TITLE"])
         for task in todos:
-            writer.writerow([employee_id, employee_name, task['completed'], task['title']])
+            writer.writerow([employee_id, employee_name, task['completed'],
+                             task['title']])
 
 if __name__ == '__main__':
     if len(sys.argv) != 2 or not sys.argv[1].isdigit():
@@ -44,7 +46,8 @@ if __name__ == '__main__':
         total_tasks = len(todos)
         number_of_done_tasks = len(completed_tasks)
 
-        print(f"Employee {emp_name} is done with tasks({number_of_done_tasks}/{total_tasks}):")
+        print(f"Employee {emp_name} is done with tasks("
+              f"{number_of_done_tasks}/{total_tasks}):")
 
         for task in completed_tasks:
             print(f"\t {task.get('title')}")
