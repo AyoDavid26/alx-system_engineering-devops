@@ -8,6 +8,7 @@ import sys
 
 REST_API = "https://jsonplaceholder.typicode.com"
 
+
 def get_employee_data(employee_id):
     user_url = f"{REST_API}/users/{employee_id}"
     todos_url = f"{REST_API}/todos?userId={employee_id}"
@@ -19,6 +20,7 @@ def get_employee_data(employee_id):
     todos_response.raise_for_status()
 
     return user_response.json(), todos_response.json()
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2 or not sys.argv[1].isdigit():
@@ -44,4 +46,3 @@ if __name__ == '__main__':
         print(f"HTTP request failed: {e}")
     except Exception as e:
         print(f"An error occurred: {e}")
-
