@@ -9,6 +9,7 @@ import sys
 
 REST_API = "https://jsonplaceholder.typicode.com"
 
+
 def get_employee_data(employee_id):
     user_url = f"{REST_API}/users/{employee_id}"
     todos_url = f"{REST_API}/todos?userId={employee_id}"
@@ -21,6 +22,7 @@ def get_employee_data(employee_id):
 
     return user_response.json(), todos_response.json()
 
+
 def export_to_csv(employee_id, employee_name, todos):
     filename = f"{employee_id}.csv"
     with open(filename, mode='w', newline='') as file:
@@ -30,6 +32,7 @@ def export_to_csv(employee_id, employee_name, todos):
         for task in todos:
             writer.writerow([employee_id, employee_name, task['completed'],
                              task['title']])
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2 or not sys.argv[1].isdigit():
@@ -59,4 +62,3 @@ if __name__ == '__main__':
         print(f"HTTP request failed: {e}")
     except Exception as e:
         print(f"An error occurred: {e}")
-
